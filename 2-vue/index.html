@@ -15,8 +15,20 @@
     </header>
 
     <div class="container">
+      
+      
+      <form v-on:submit.prevent="onSubmit">
+        
+        <!-- Vue에 query라는 변수로 바인딩 시킨다. -->
+        <!-- v-model은 양방향 바인딩을 지원한다. -->
+        <input type="text" v-model="query" placeholder="검색어를 입력하세요"  autofocus>
+        
+        <!-- v-show: 해당하는 모델이 있으면 show 없으면 hide -->
+        <button type="text" v-show="query.length" class="btn-reset"></button>
+      </form>
+
       <!-- 데이터를 표현할 때는 중괄호를 쓴다 -->
-      {{msg}}
+      <!-- {{msg}} -->
     </div>
   </div>
 

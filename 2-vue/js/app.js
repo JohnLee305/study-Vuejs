@@ -4,6 +4,13 @@ new Vue({
 
     // data : 표현할 데이터와 키값을 입력
     data: {
-        msg: 'hello world'
+        // msg: 'hello world'
+        // query : 입력을 담당하는 데이터 할당.
+        query : ''
+    }
+    , methods : {
+        onSubmit(e){
+            
+        }
     }
 })
