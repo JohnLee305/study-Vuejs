@@ -12,5 +12,8 @@ new Vue({
         onSubmit(e){
             
         }
+        , onReset(e){
+            this._data.query = "";
+        }
     }
 })
