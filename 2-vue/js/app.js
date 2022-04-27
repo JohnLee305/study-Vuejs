@@ -9,11 +9,16 @@ new Vue({
         query : ''
     }
     , methods : {
-        onSubmit(e){
+         onSubmit(e){
             
         }
         , onReset(e){
-            this._data.query = "";
+            // 데이터 안에 있는 변수 접근할때는 그냥 this.변수명으로 접근이 가능하다.
+            this.query = "";
+        }
+        , onKeyup(e){
+            // 내부에 있는 메서드에 접근할때도 그냥 this로 접근이 가능하다.
+            if(!this.query.length) this.onReset()
         }
     }
 })
