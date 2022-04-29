@@ -8,7 +8,7 @@ new Vue({
         // msg: 'hello world'
         // query : 입력을 담당하는 데이터 할당.
           query : ''
-        , searchResult : []
+        , searchResult : [] //검색결과가 들어가는 배열
         , submitted : false
     }
     , methods : {
