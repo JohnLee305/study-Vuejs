@@ -50,10 +50,17 @@
       </div>
       <div v-else>
         <ul class="tabs">
-          <li v-for="tab in tabs" v-bind:class="{active: tab === selectedTab}">
+          <li v-for="tab in tabs" v-on:click="onClickTab(tab)" v-bind:class="{active: tab === selectedTab}">
             {{tab}}
           </li>
         </ul>
+
+        <div v-if="selectedTab === tabs[0]">
+            추천검색어 목록
+        </div>
+        <div v-else>
+            최근검색어 목록
+        </div>
       </div>
       <!-- 데이터를 표현할 때는 중괄호를 쓴다 -->
       <!-- {{msg}} -->

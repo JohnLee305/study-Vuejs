@@ -11,6 +11,7 @@ new Vue({
         , searchResult : [] //검색결과가 들어가는 배열
         , submitted : false
         , tabs: ['추천검색어','최근검색어']
+        , selectedTab : ''
     }
     ,created(){
         this.selectedTab = this.tabs[0]
@@ -38,6 +39,8 @@ new Vue({
             this.submitted = false
             this.searchResult = []
         }
-
+        , onClickTab(tab){
+            this.selectedTab = tab;
+        }
     }
 })
