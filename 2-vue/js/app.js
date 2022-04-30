@@ -10,6 +10,10 @@ new Vue({
           query : ''
         , searchResult : [] //검색결과가 들어가는 배열
         , submitted : false
+        , tabs: ['추천검색어','최근검색어']
+    }
+    ,created(){
+        this.selectedTab = this.tabs[0]
     }
     , methods : {
          onSubmit(e){
@@ -29,5 +33,11 @@ new Vue({
                 this.searchResult = data 
             })
         }
+        , resetForm(){
+            this.query = ''
+            this.submitted = false
+            this.searchResult = []
+        }
+
     }
 })
