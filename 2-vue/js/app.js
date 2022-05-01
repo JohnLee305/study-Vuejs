@@ -1,4 +1,5 @@
 import SearchModel from "./models/SearchModel.js";
+import KeywordModel from "./models/KeywordModel.js";
 new Vue({
     // el : 화면 컴포넌드 아이디를 입력
     el: '#app',
@@ -12,9 +13,11 @@ new Vue({
         , submitted : false
         , tabs: ['추천검색어','최근검색어']
         , selectedTab : ''
+        , keywords:[]
     }
     ,created(){
         this.selectedTab = this.tabs[0]
+        this.fetchKeyword();
     }
     , methods : {
          onSubmit(e){
@@ -41,6 +44,11 @@ new Vue({
         }
         , onClickTab(tab){
             this.selectedTab = tab;
+        }
+        , fetchKeyword(){
+            KeywordModel.list().then(data => {
+                this.keywords = data
+            })
         }
     }
 })
