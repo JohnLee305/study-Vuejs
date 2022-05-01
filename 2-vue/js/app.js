@@ -50,5 +50,9 @@ new Vue({
                 this.keywords = data
             })
         }
+        ,onClickKeyword(keyword){
+            this.query = keyword;
+            this.search()
+        }
     }
 })
