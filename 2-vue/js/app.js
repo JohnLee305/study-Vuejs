@@ -1,5 +1,6 @@
 import SearchModel from "./models/SearchModel.js";
 import KeywordModel from "./models/KeywordModel.js";
+import HistoryModel from "./models/HistoryModel.js";
 new Vue({
     // el : 화면 컴포넌드 아이디를 입력
     el: '#app',
@@ -14,10 +15,12 @@ new Vue({
         , tabs: ['추천검색어','최근검색어']
         , selectedTab : ''
         , keywords:[]
+        , history:[]
     }
     ,created(){
         this.selectedTab = this.tabs[0]
         this.fetchKeyword();
+        this.fetchHistory();
     }
     , methods : {
          onSubmit(e){
@@ -48,6 +51,11 @@ new Vue({
         , fetchKeyword(){
             KeywordModel.list().then(data => {
                 this.keywords = data
+            })
+        }
+        , fetchHistory(){
+            HistoryModel.list().then(data => {
+                this.history = data
             })
         }
         ,onClickKeyword(keyword){
