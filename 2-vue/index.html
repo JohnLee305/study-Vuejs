@@ -13,21 +13,10 @@
     <header>
       <h2 class="container">검색</h2>
     </header>
-
     <div class="container">
+      <!-- app.js에서 만든 vue인스턴스와 바인딩 되어서 template에 있는 html을 불러옴. -->
+      <search-form></search-form>
       
-      <!-- v-on : 이벤트 리스너 -->
-      <!-- submit : 서브밋 이벤트를 리슨함 -->
-      <!-- submit.prevent : submit시 preventDefault (화면 리로딩 안함) -->
-      <form v-on:submit.prevent="onSubmit">
-        
-        <!-- Vue에 query라는 변수로 바인딩 시킨다. -->
-        <!-- v-model은 양방향 바인딩을 지원한다. -->
-        <input type="text" v-on:keyup="onKeyup" v-model="query" placeholder="검색어를 입력하세요"  autofocus>
-        
-        <!-- v-show: 해당하는 모델이 있으면 show 없으면 hide -->
-        <button type="text" v-on:click="onReset" v-show="query.length" class="btn-reset"></button>
-      </form>
 
       <!-- 검색 결과 표현 -->
       <!-- 서브밋이 되었을때만 아래 내용을 노출한다. -->
@@ -94,3 +83,19 @@
   <script type="module" src="./js/app.js"></script>
 </body>
 </html>
+
+<!-- FormComponent의 js코드에 바인딩되아있음 -->
+<template id="search-form">
+<!-- v-on : 이벤트 리스너 -->
+  <!-- submit : 서브밋 이벤트를 리슨함 -->
+  <!-- submit.prevent : submit시 preventDefault (화면 리로딩 안함) -->
+  <form v-on:submit.prevent="onSubmit">
+    
+    <!-- Vue에 query라는 변수로 바인딩 시킨다. -->
+    <!-- v-model은 양방향 바인딩을 지원한다. -->
+    <input type="text" v-on:keyup="onKeyup" v-model="query" placeholder="검색어를 입력하세요"  autofocus>
+    
+    <!-- v-show: 해당하는 모델이 있으면 show 없으면 hide -->
+    <button type="text" v-on:click="onReset" v-show="query.length" class="btn-reset"></button>
+  </form>
+</template>

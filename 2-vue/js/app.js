@@ -1,6 +1,8 @@
 import SearchModel from "./models/SearchModel.js";
 import KeywordModel from "./models/KeywordModel.js";
 import HistoryModel from "./models/HistoryModel.js";
+
+import FormComponent from "./components/FormComponent.js";
 new Vue({
     // el : 화면 컴포넌드 아이디를 입력
     el: '#app',
@@ -17,7 +19,10 @@ new Vue({
         , keywords:[]
         , history:[]
     }
-    ,created(){
+    , components: {
+        'search-form' : FormComponent
+    }
+    , created(){
         this.selectedTab = this.tabs[0]
         this.fetchKeyword();
         this.fetchHistory();
