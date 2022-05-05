@@ -55,6 +55,7 @@
 ###[2022-05-05] 
   - FORM 컴포넌트 분리
   - 나머지 FORM컴포넌트 분리
+  - ResultComponent 구현
  
 
 

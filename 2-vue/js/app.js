@@ -3,6 +3,7 @@ import KeywordModel from "./models/KeywordModel.js";
 import HistoryModel from "./models/HistoryModel.js";
 
 import FormComponent from "./components/FormComponent.js";
+import ResultComponent from "./components/ResultComponent.js";
 new Vue({
     // el : 화면 컴포넌드 아이디를 입력
     el: '#app',
@@ -21,6 +22,7 @@ new Vue({
     }
     , components: {
         'search-form' : FormComponent
+        , 'search-result' : ResultComponent
     }
     , created(){
         this.selectedTab = this.tabs[0]
